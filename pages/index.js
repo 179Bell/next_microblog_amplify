@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
-import Layout from "../components/Layout";
+import Layout, { siteTitle } from "../components/Layout";
 import utilStyle from "../styles/utils.module.css";
 import Link from "next/link";
 import { getPostsData } from "../lib/post";
@@ -22,7 +22,10 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <>
-      <Layout>
+      <Layout home>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
         <section className={utilStyle.headingMd}>
           <p>
             ゴーシュは夜過ぎばだした。先生は十啼く狸のようになっと来まし。工合は火花どなりたりおれが落ちついて来な。
